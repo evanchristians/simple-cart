@@ -1,0 +1,14 @@
+[
+  {
+    "code": "percent30",
+    "discount_percent": 30
+  },
+  {
+    "code": "halfoff",
+    "discount_percent": 50
+  },
+  {
+    "code": "summer",
+    "discount_percent": 25
+  }
+]
