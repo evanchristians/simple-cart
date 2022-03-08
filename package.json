@@ -1,0 +1,21 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "cart.js",
+  "scripts": {
+    "start": "node --experimental-json-modules --no-warnings cart.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanchristians/simple-cart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evanchristians/simple-cart/issues"
+  },
+  "homepage": "https://github.com/evanchristians/simple-cart#readme"
+}

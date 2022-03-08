@@ -1,20 +1,23 @@
-const discounts = require("./discounts.json");
-const products = require("./products.json");
+import discounts from "./discounts.json";
+import products from "./products.json";
+import * as R from "readline";
+import {stdin as input, stdout as output} from "process";
+
+const rl = R.createInterface({input, output});
 
 const debug = () => {
   console.table(
     getCart().lineItems.map(l => ({
-      id: l.id,
-      title: l.title,
-      itemPrice: l.price,
-      qty: l.qty,
-      totalPrice: l.price * l.qty,
+      ...l,
+      total: l.price * l.qty,
     })),
+    ["id", "title", "price", "qty", "total"],
   );
+
+  const {lineItems, ...cart} = getCart();
+
   console.log({
-    cart: {
-      ...getCart(),
-    },
+    cart,
   });
 };
 
@@ -83,6 +86,9 @@ addToCart(products[2]);
 addToCart(products[2]);
 addToCart(products[7]);
 addToCart(products[1]);
-applyDiscount("halfoff");
 
-debug();
+rl.question("Enter your discount code:", a => {
+  applyDiscount(a);
+  debug();
+  rl.close();
+});
