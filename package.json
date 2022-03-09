@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "main": "cart.js",
+  "main": "main.js",
   "scripts": {
-    "start": "node --experimental-json-modules --no-warnings cart.js"
+    "start": "node --experimental-json-modules --no-warnings main.js"
   },
   "repository": {
     "type": "git",
