@@ -12,7 +12,7 @@ Cart.addToCart(products[2]);
 Cart.addToCart(products[7]);
 Cart.addToCart(products[1]);
 
-rl.question("Enter your discount code:", a => {
+rl.question("Enter your discount code: ", a => {
   Cart.applyDiscount(a);
   Log.cart();
   rl.close();

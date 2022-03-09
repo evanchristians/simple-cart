@@ -24,10 +24,14 @@ export const updateCartTotals = () => {
     cart.subTotal = cart.total;
   }
 };
+
 export const applyDiscount = code => {
   const discount = getDiscount(code);
 
-  if (!discount) return;
+  if (!discount) {
+    console.log(`Discount code ${code} is not valid!`);
+    return;
+  }
 
   cart.discount = discount;
   updateCartTotals();
@@ -35,7 +39,6 @@ export const applyDiscount = code => {
 
 export const addToCart = product => {
   const cart = getCart();
-
   const lineItemIndex = cart.lineItems.findIndex(l => l.id == product.id);
 
   if (lineItemIndex >= 0) {
