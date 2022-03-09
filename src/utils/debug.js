@@ -1,6 +1,6 @@
 import * as Cart from "../lib/cart.js";
 
-const debug = () => {
+export const cart = () => {
   console.table(
     Cart.getCart().lineItems.map(l => ({
       ...l,
@@ -15,5 +15,3 @@ const debug = () => {
     cart,
   });
 };
-
-export default debug;
